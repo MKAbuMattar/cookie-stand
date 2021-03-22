@@ -405,7 +405,7 @@ function hoursOfOperation() {
   return workHours;
 }
 
-let Shop = function (location, minNumOfCustomers, maxminNumOfCustomers, averageCookiesPerCustomer) {
+let Store = function (location, minNumOfCustomers, maxminNumOfCustomers, averageCookiesPerCustomer) {
   this.location = location;
   this.minNumOfCustomers = minNumOfCustomers;
   this.maxminNumOfCustomers = maxminNumOfCustomers;
@@ -416,20 +416,20 @@ let Shop = function (location, minNumOfCustomers, maxminNumOfCustomers, averageC
   this.totalCookiesPerDay = 0;
 };
 
-Shop.prototype.getCustomersPerHour = function () {
+Store.prototype.getCustomersPerHour = function () {
   for (let i = 0; i < workHours.length; i++) {
     this.customersPerHour.push(getRandomNumber(this.minNumOfCustomers, this.maxminNumOfCustomers));
   }
 };
 
-Shop.prototype.getCookiesPerHour = function () {
+Store.prototype.getCookiesPerHour = function () {
   for (let i = 0; i < workHours.length; i++) {
     let temp = this.customersPerHour[i] * this.averageCookiesPerCustomer;
     this.cookiesPerHour.push(Math.floor(temp));
   }
 };
 
-Shop.prototype.getTotalCookiesPerDay = function () {
+Store.prototype.getTotalCookiesPerDay = function () {
   for (let i = 0; i < workHours.length; i++) {
     this.totalCookiesPerDay += this.cookiesPerHour[i];
   }
@@ -458,7 +458,7 @@ for (let i = 0; i < workHours.length; i++) {
   eachHoursTotals.push(0);
 }
 
-Shop.prototype.render = function () {
+Store.prototype.render = function () {
   const container = document.getElementById('sales-Table');
   const trEl = document.createElement('tr');
   let tdEl = document.createElement('td');
@@ -502,27 +502,27 @@ let renderFooter = function () {
   container.appendChild(trEl);
 };
 
-const seattle = new Shop('Seattle', 23, 65, 6.3);
+const seattle = new Store('Seattle', 23, 65, 6.3);
 seattle.getCustomersPerHour();
 seattle.getCookiesPerHour();
 seattle.getTotalCookiesPerDay();
 
-const tokyo = new Shop('Tokyo', 3, 24, 1.2);
+const tokyo = new Store('Tokyo', 3, 24, 1.2);
 tokyo.getCustomersPerHour();
 tokyo.getCookiesPerHour();
 tokyo.getTotalCookiesPerDay();
 
-const dubai = new Shop('Dubai', 11, 38, 3.7);
+const dubai = new Store('Dubai', 11, 38, 3.7);
 dubai.getCustomersPerHour();
 dubai.getCookiesPerHour();
 dubai.getTotalCookiesPerDay();
 
-const paris = new Shop('Paris', 20, 38, 2.3);
+const paris = new Store('Paris', 20, 38, 2.3);
 paris.getCustomersPerHour();
 paris.getCookiesPerHour();
 paris.getTotalCookiesPerDay();
 
-const lima = new Shop('Lima', 2, 16, 4.6);
+const lima = new Store('Lima', 2, 16, 4.6);
 lima.getCustomersPerHour();
 lima.getCookiesPerHour();
 lima.getTotalCookiesPerDay();
