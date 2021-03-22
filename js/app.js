@@ -447,7 +447,7 @@ let renderHeader = function () {
     trEl.appendChild(thEl);
   }
   thEl = document.createElement('th');
-  thEl.textContent = 'Totals';
+  thEl.textContent = 'Daily Location Total';
   trEl.appendChild(thEl);
   container.appendChild(trEl);
 };
