@@ -46,7 +46,7 @@ function calculateTotal() {
   return dailyTotal;
 }
 
-// global other method
+// global method
 
 for (let i = 0; i < workHours.length; i++) {
   eachHoursTotals.push(0);
@@ -64,6 +64,8 @@ let Store = function (location, minNumOfCustomers, maxminNumOfCustomers, average
   this.cookiesPerHour = [];
   this.totalCookiesPerDay = 0;
 };
+
+// constructor methods
 
 Store.prototype.getCustomersPerHour = function () {
   for (let i = 0; i < workHours.length; i++) {
@@ -84,7 +86,7 @@ Store.prototype.getTotalCookiesPerDay = function () {
   }
 };
 
-// header table render
+// render table header
 
 let renderHeader = function () {
   const trEl = document.createElement('tr');
@@ -102,7 +104,7 @@ let renderHeader = function () {
   container.appendChild(trEl);
 };
 
-// content table render
+// render table content
 
 Store.prototype.render = function () {
   const trEl = document.createElement('tr');
@@ -122,11 +124,11 @@ Store.prototype.render = function () {
   trEl.appendChild(tdEl);
 };
 
-// footer table render
+// render table footer
 
 let renderFooter = function () {
   const trEl = document.createElement('tr');
-  trEl.id = 'footer';
+  trEl.id = 'tableFooter';
   let tdEl = document.createElement('td');
   tdEl.textContent = 'Totals';
   trEl.appendChild(tdEl);
@@ -195,8 +197,12 @@ function addNewBranch(event) {
   addBranch.getTotalCookiesPerDay();
   addBranch.render();
 
-  let footer = document.getElementById('footer');
+  //remove old table footer & rerender it
+
+  let footer = document.getElementById('tableFooter');
   container.removeChild(footer);
   renderFooter();
+
+  //remove user input
   addBranchForm.reset();
 }
