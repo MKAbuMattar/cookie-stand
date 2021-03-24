@@ -24,6 +24,22 @@
     </ul>
   </nav>
   <main>
+    <h2>Create a New Branch</h2>
+    <section class="create-branch-section">
+      <form action="" method="POST" id="add-branch" class="add-branch">
+        <fieldset class="box">
+          <label for="locationName">Location Name:</label>
+          <input type="text" name="locationName" id="locationName">
+          <label for="minCustomersPerHour">Minimum Number of Customers Per Hour:</label>
+          <input type="text" name="minCustomersPerHour" id="minCustomersPerHour">
+          <label for="maxCustomersPerHour">Maximum Number of Customers Per Hour:</label>
+          <input type="text" name="maxCustomersPerHour" id="maxCustomersPerHour">
+          <label for="avgCookiesPurchasedPerHour">Average Number of Cookies Purchased Per Customer:</label>
+          <input type="text" name="avgCookiesPurchasedPerHour" id="avgCookiesPurchasedPerHour">
+          <input type="submit" class="btn-submit" value="add branch">
+        </fieldset>
+      </form>
+    </section>
     <h2>Table Of Sales</h2>
     <section class="table-section">
       <table id="sales-Table"></table>
