@@ -29,13 +29,16 @@
       <form action="" method="POST" id="add-branch" class="add-branch">
         <fieldset class="box">
           <label for="locationName">Location Name:</label>
-          <input type="text" name="locationName" id="locationName">
+          <input type="text" name="locationName" id="locationName" placeholder="example Amman, Salt, Riyadh">
           <label for="minCustomersPerHour">Minimum Number of Customers Per Hour:</label>
-          <input type="text" name="minCustomersPerHour" id="minCustomersPerHour">
+          <input type="number" step="any" name="minCustomersPerHour" id="minCustomersPerHour"
+            placeholder="example 35.8">
           <label for="maxCustomersPerHour">Maximum Number of Customers Per Hour:</label>
-          <input type="text" name="maxCustomersPerHour" id="maxCustomersPerHour">
+          <input type="number" step="any" name="maxCustomersPerHour" id="maxCustomersPerHour"
+            placeholder="example 88.3">
           <label for="avgCookiesPurchasedPerHour">Average Number of Cookies Purchased Per Customer:</label>
-          <input type="text" name="avgCookiesPurchasedPerHour" id="avgCookiesPurchasedPerHour">
+          <input type="number" step="any" name="avgCookiesPurchasedPerHour" id="avgCookiesPurchasedPerHour"
+            placeholder="example 4.8">
           <input type="submit" class="btn-submit" value="add branch">
         </fieldset>
       </form>
