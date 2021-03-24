@@ -204,5 +204,6 @@ function addNewBranch(event) {
   renderFooter();
 
   //remove user input
+
   addBranchForm.reset();
 }
